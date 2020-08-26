@@ -1,8 +1,11 @@
-/*
-light green : #7ed56f
-medium green : #55c57a
-dark green : #28b485
-*/
+
+$colorPrimaryLight : #7ed56f;
+$colorprimary : #55c57a;
+$colorPrimaryDark : #28b485;
+$colorGray : #777;
+$colorWhite : #fff;
+$colorBlack : #000;
+
 
 *,
 *::after,
@@ -19,14 +22,14 @@ body{
     font-weight: 400;
     /*font-size:16px ;*/
     line-height: 1.7;
-    color: #777;
+    color: $colorGray;
     padding: 2.5rem;
     box-sizing: border-box;
 }
 .header{
     background-image: linear-gradient(to right bottom,
-    rgba(126,213,111,0.8),
-    rgba(40,180,131,0.8)) ,url("img/hero.jpg");
+    rgba($colorPrimaryLight,0.8),
+    rgba($colorPrimaryDark,0.8)) ,url("img/hero.jpg");
     height: 95vh;
     background-position: top;
     clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
@@ -42,7 +45,7 @@ body{
     width: auto;
 }
 .headingPrimary{
-    color: #fff;
+    color: $colorWhite;
     text-transform: uppercase;
     margin-bottom: 6rem;
 }
@@ -120,16 +123,16 @@ body{
     font-size: 1.7rem;
 }
 .btnWhite{
-    background-color: #fff;
-    color: #777;
+    background-color: $colorWhite;
+    color: $colorGray;
 }
 .btn:hover{
     transform: translateY(-.3rem);
-    box-shadow: 0 1rem 2rem rgba(0,0, 0, 0.2);
+    box-shadow: 0 1rem 2rem rgba($colorBlack, 0.2);
 }
 .btn:active{
     transform: translateY(-.1rem);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
+    box-shadow: 0 .5rem 1rem rgba($colorBlack,0.2);
 }
 .btn::after{
     content: "";
@@ -144,7 +147,7 @@ body{
     transition: all .4s;
 }
 .btnWhite::after{
-    background-color: #fff;
+    background-color: $colorWhite;
 }
 .btn:hover::after{
     transform: scaleX(1.4) scaleY(1.6);
