@@ -32,15 +32,24 @@ body {
   position: relative;
 }
 
-.logoBox {
+.headerLogoBox {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-.logo {
+.headerLogo {
   height: 3.5rem;
   width: auto;
+}
+
+.headerTextBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .headingPrimary {
@@ -69,15 +78,6 @@ body {
           animation-name: moveInRight;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
-}
-
-.textBox {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  text-align: center;
 }
 
 @-webkit-keyframes moveInLeft {
@@ -191,11 +191,21 @@ body {
   color: #777;
 }
 
+.btnWhite::after {
+  background-color: #fff;
+}
+
 .btn:hover {
   -webkit-transform: translateY(-0.3rem);
           transform: translateY(-0.3rem);
   -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
           box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover::after {
+  -webkit-transform: scaleX(1.4) scaleY(1.6);
+          transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
 }
 
 .btn:active {
@@ -217,16 +227,6 @@ body {
   z-index: -1;
   -webkit-transition: all .4s;
   transition: all .4s;
-}
-
-.btnWhite::after {
-  background-color: #fff;
-}
-
-.btn:hover::after {
-  -webkit-transform: scaleX(1.4) scaleY(1.6);
-          transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
 }
 
 .btnAnimation {
