@@ -1,0 +1,26 @@
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+  background-color: #eee;
+}
+
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row .col-1-of-2 {
+  width: calc 100% - 6rem / 2;
+  background-color: goldenrod;
+  float: left;
+}
+
+.row .col-1-of-2:not(:last-child) {
+  margin-right: 6rem;
+}
+/*# sourceMappingURL=grid.css.map */
