@@ -1,9 +1,9 @@
 
 
-
-
-
-
+$colorBlueDark:#5643fa;
+$colorBlue : #2998ff;
+$colorSecondaryDark : #ff7730;
+$colorSecondary : #ffb900;
 $colorPrimaryLight : #7ed56f;
 $colorprimary : #55c57a;
 $colorPrimaryDark : #28b485;
@@ -138,7 +138,12 @@ body{
         &::after{
             background-color: $colorWhite;
         }
-    }
+    &Green{
+        background-color: $colorprimary;
+        color: $colorWhite;
+        &::after{
+           background-color: $colorprimary;
+        }
     &:hover{
         transform: translateY(-.3rem);
         box-shadow: 0 1rem 2rem rgba($colorBlack, 0.2);
@@ -251,6 +256,7 @@ $horizontalGrid : 6rem;
 .headingTertiary{
     font-size: 1.6rem;
     text-transform: uppercase;
+    margin-bottom: 2.3rem;
 }
 .paragraph{
     font-size: 1.4rem;
@@ -317,6 +323,178 @@ $horizontalGrid : 6rem;
 
 }
 
+//section features
+.features{
+    padding: 20rem 0;
+    background-image: linear-gradient(to right bottom,
+    rgba($colorPrimaryLight,0.8),
+    rgba($colorPrimaryDark,0.8)) ,url("img/nat-4.jpg");
+    background-size:cover;
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+    & > *{
+        transform: skewY(7deg);
+    }
+    &Box{
+        background-color: rgba($colorWhite,.8);
+        font-size: 1.5rem;
+        padding: 2.5rem;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba($colorBlack,.15);
+        text-align: center;
+        transition: transform .3s;
+        &Icon{
+            font-size: 6rem;
+            color: transparent;
+            background-image: linear-gradient(to right,$colorprimary,$colorPrimaryDark);
+            background-clip: text;
+            display: inline-block;
+        }
+        &:hover{
+            transform: translateY(-1.5rem);
+        }
+    }
 
+}
 
+///section tours started
+.tours{
+    background-color: #f7f7f7;
+    padding: 25rem 0 15rem 0;
+    margin-top: -10rem;
+}
+.card{
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 50rem;
+    &Side{
+        position: absolute;
+        height: 50rem;
+        font-size: 2rem;
+        transition: all .8s ease;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: .3rem;
+        box-shadow: 0 1.5rem 4rem rgba($colorBlack,.15);
+    
+        &Front{
+            background-color: $colorWhite;
+        }
+        &Back{
+            transform: rotateY(180deg);
+            &1{
+                background-image: linear-gradient(to right bottom, $colorSecondary, $colorSecondaryDark);
+            }
+            &2{
+                background-image: linear-gradient(to right bottom, $colorprimary, $colorPrimaryDark);
+            }
+            &3{
+                background-image: linear-gradient(to right bottom, $colorBlue, $colorBlueDark);
+            }
+        }
 
+    }
+    &:hover &SideFront{
+        transform: rotateY(-180deg);
+    }
+    &:hover &SideBack{
+        transform: rotateY(0deg);
+    }
+    &Picture{
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: screen;
+        clip-path: polygon(0 0,100% 0,100% 85%,0 100%);
+        &P1{
+            background-image:linear-gradient(to right bottom, $colorSecondary, $colorSecondaryDark),url(img/nat-5.jpg) ;
+        }
+        &P2{
+            background-image:linear-gradient(to right bottom, $colorprimary, $colorPrimaryDark),url(img/nat-6.jpg) ;
+        }
+        &P3{
+            background-image:linear-gradient(to right bottom, $colorBlue, $colorBlueDark),url(img/nat-7.jpg) ;
+        }
+    }
+    &Heading{
+        font-size: 2.8rem;
+        color: $colorWhite;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        text-align: right;
+        font-weight: 300;
+        text-transform: uppercase;
+        width: 75%;
+        box-decoration-break: clone;
+    }
+    &HeadingSpan{
+        padding: 1rem 1.5rem;
+        &1{
+            background-image: linear-gradient(to right bottom, 
+            rgba($colorSecondary,.85) ,
+            rgba($colorSecondaryDark,.85));
+        }
+        &2{
+            background-image: linear-gradient(to right bottom, 
+            rgba($colorprimary,.85) ,
+            rgba($colorPrimaryDark,.85));
+        }
+        &3{
+            background-image: linear-gradient(to right bottom, 
+            rgba($colorBlue,.85) ,
+            rgba($colorBlueDark,.85));
+        }
+    }
+    &Details{
+        padding: 3rem;
+        ul{
+            list-style: none;
+            margin: 0 auto;
+            width: 80%;
+            li{
+                text-align: center;
+                font-size: 2rem;
+                &:not(:last-child){
+                    border-bottom: 1px solid #eee;
+                }
+
+            }
+        }
+    }
+    &Cta{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 90%;
+        text-align: center;
+    }
+    &PriceBox{
+        color: $colorWhite;
+        text-align: center;
+        margin-bottom: 8rem;
+        &Only{
+            font-size: 1.4rem;
+            text-transform: uppercase;
+        }
+        &Value{
+            font-size: 6rem;
+            font-weight: 100;
+        }
+    }
+}
+.marginTop{
+    margin-top: 6rem;
+}
+.green{
+    background-color: $colorprimary;
+    color: $colorWhite;
+        &::after{
+           background-color: $colorprimary;
+        }
+}
