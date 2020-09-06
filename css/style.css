@@ -384,6 +384,81 @@ body {
     transform: scale(1) translateX(-4.5rem);
     filter: blur(3px) brightness(80%); }
 
+.form__group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.form__input {
+  font-family: inherit;
+  font-size: 1.5rem;
+  border-radius: 2px;
+  border: none;
+  padding: 1.5rem 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid transparent;
+  width: 90%;
+  display: block;
+  color: inherit; }
+  .form__input::-webkit-input-placeholder {
+    color: #999; }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #55c57a; }
+  .form__input:focus:invalid {
+    border-bottom: 2px solid #ff7730; }
+
+.form__label {
+  font-size: 1.7rem;
+  font-weight: 700;
+  display: block;
+  margin-left: 2rem;
+  margin-top: .7rem;
+  transition: all .3s; }
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem); }
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+
+.form__radio-label {
+  cursor: pointer;
+  font-size: 1.6rem;
+  position: relative;
+  padding-left: 4.5rem; }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: -.4rem;
+  display: inline-block;
+  border: 5px solid #55c57a; }
+  .form__radio-button::after {
+    content: "";
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #55c57a;
+    opacity: 0;
+    transition: all .3s; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -453,3 +528,16 @@ body {
 .section-stories {
   position: relative;
   padding: 15rem 0; }
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+
+.book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50.1%), url(../img/nat-10.jpg);
+  background-size: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
+  .book__form {
+    width: 50%;
+    padding: 6rem; }
